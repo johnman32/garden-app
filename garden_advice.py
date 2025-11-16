@@ -26,11 +26,12 @@ def plant_check(plant_type):
     return plant_advice.get(plant_type.lower(), "No advice for this type of plant.")
 
 
-# Get user input
+# Get user input for season
 season = input(str("Please enter what season: "))
 season_result = season_check(season)
 print(season_result)
 
+# Get user input for plant type
 plant_type = input(str("Please enter your plant type: "))
 plant_result = plant_check(plant_type)
 print(plant_result)
