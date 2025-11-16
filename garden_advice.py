@@ -1,28 +1,40 @@
-# Hardcoded values for the season and plant type
-season = "summer"  # TODO: Replace with input() to allow user interaction.
-plant_type = "flower"  # TODO: Replace with input() to allow user interaction.
+def season_check(season):
+    """
+    Function to provide advice based on what season user inputs
+    """
 
-# Variable to hold gardening advice
-advice = ""
+    season_advice = {
+        "summer": "Water your plants regularly and provide some shade. \n",
+        "winter": "protect your plants from frost with covers. \n",
+        "spring": "Great time for planting!, Prepare soil and seeds. \n",
+        "autumn": "Mulch your garden. \n.",
+    }
 
-# Determine advice based on the season
-if season == "summer":
-    advice += "Water your plants regularly and provide some shade.\n"
-elif season == "winter":
-    advice += "Protect your plants from frost with covers.\n"
-else:
-    advice += "No advice for this season.\n"
+    return season_advice.get(season.lower(), "No advice for this season. \n")
 
-# Determine advice based on the plant type
-if plant_type == "flower":
-    advice += "Use fertiliser to encourage blooms."
-elif plant_type == "vegetable":
-    advice += "Keep an eye out for pests!"
-else:
-    advice += "No advice for this type of plant."
 
-# Print the generated advice
-print(advice)
+def plant_check(plant_type):
+    """
+    Function to provide advice based on what flower user inputs
+    """
+    plant_advice = {
+        "flower": "Use fertiliser to encourage blooms.",
+        "vegetable": "Keep an eye out for pests!",
+        "herb": "Harvest regularly to encourage growth."
+    }
+
+    return plant_advice.get(plant_type.lower(), "No advice for this type of plant.")
+
+
+# Get user input
+season = input(str("Please enter what season: "))
+season_result = season_check(season)
+print(season_result)
+
+plant_type = input(str("Please enter your plant type: "))
+plant_result = plant_check(plant_type)
+print(plant_result)
+
 
 # TODO: Examples of possible features to add:
 # - Add detailed comments explaining each block of code.
